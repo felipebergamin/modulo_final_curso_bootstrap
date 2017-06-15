@@ -1,0 +1,49 @@
+@import "../components/bootstrap/scss/bootstrap";
+@import "../components/components-font-awesome/scss/font-awesome";
+
+@import "sidebar";
+@import "header";
+
+@import "card_custom";
+@import "badge_custom";
+
+.row {
+    @include make-row;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+}
+
+.left-column,
+.right-column {
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+}
+
+@include media-breakpoint-up('lg') {
+    .container {
+        width: 85%;
+        margin-left: 200px;
+    }
+}
+
+@include media-breakpoint-up('sm') {
+    .left-column {
+        @include make-col-project(4);
+    }
+
+    .right-column {
+        @include make-col-project(8);
+    }
+}
